@@ -5,9 +5,13 @@ import 'firebase/firebase-firestore';
 import firebaseConfig from './firebaseConfig';
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
+
+// eslint-disable-next-line
 const db = firebaseApp.firestore();
 
-export default
+
+// eslint-disable-next-line
+export default 
 {
     googleLogar: async () => 
     {
@@ -17,3 +21,4 @@ export default
         
     }
 }
+
