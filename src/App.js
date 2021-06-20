@@ -1,25 +1,49 @@
-import logo from './logo.png';
+import React, {useState} from 'react';
+import { BrowserRouter  } from 'react-router-dom';
+import { Routes } from './routes/routes';
 import './App.css';
+import SignIn from './pages/login';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+
+export default function App() {
+  
+  const [user, setUser] = useState(null);
+
+  const actionLoginDataGoogle = async (u) => 
+  { 
+      let newUser = 
+      {
+        id: u.uid,
+        name: u.displayName,
+        avatar: u.photoURL,
+        email: u.email
+      }
+
+      setUser(newUser);
+  }
+       
+    if(user === null)
+    {
+      return (
+        <SignIn onReceiveGoogle={actionLoginDataGoogle}/>
+      )
+    }
+
+
+    return (
+
+      
+
+
+      <BrowserRouter>
+
+      <Routes/>
+
+        
+
+
+      </BrowserRouter>  
   );
 }
 
-export default App;
