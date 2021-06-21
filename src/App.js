@@ -3,6 +3,8 @@ import { BrowserRouter  } from 'react-router-dom';
 import { Routes } from './routes/routes';
 import './App.css';
 import SignIn from './pages/login';
+import Home from './pages/home';
+
 
 
 
@@ -33,15 +35,10 @@ export default function App() {
 
     return (
 
-      
-
-
       <BrowserRouter>
 
-      <Routes/>
-
-        
-
+        <Home/>
+        <Routes/>
 
       </BrowserRouter>  
   );
